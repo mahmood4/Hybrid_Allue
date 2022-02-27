@@ -21,7 +21,7 @@ class TestWorkspaces(BaseTest):
     @allure.description("Create new Workspace")
     @allure.title("Create new workspace test")
     @pytest.mark.run(order=1)
-    @pytest.mark.skip
+    #@pytest.mark.skip
     def test_create_new_workspace(self):
         login(self.config_reader, self.pages)
         before = self.pages['projects_page'].get_workspaces_number()
@@ -32,7 +32,7 @@ class TestWorkspaces(BaseTest):
     @allure.description("Rename an existing workspace")
     @allure.title("Rename an existing workspace test")
     @pytest.mark.run(order=2)
-    @pytest.mark.skip
+    #@pytest.mark.skip
     def test_rename_workspace(self):
         login(self.config_reader, self.pages)
         self.pages['projects_page'].rename_workspace(self.json_reader.read_from_json()["workspace"]["name"],
@@ -45,7 +45,7 @@ class TestWorkspaces(BaseTest):
     @allure.description("Delete an existing workspace")
     @allure.title("Delete existing workspace")
     @pytest.mark.run(order=3)
-    @pytest.mark.skip
+    #@pytest.mark.skip
     def test_delete_workspace(self):
         login(self.config_reader, self.pages)
         before = self.pages['projects_page'].get_workspaces_number()
@@ -57,7 +57,7 @@ class TestWorkspaces(BaseTest):
         "Compare between the actual number of projects seen on page and the number shown in workspaces block")
     @allure.title("Number of projects displayed in page test")
     @pytest.mark.run(order=4)
-    @pytest.mark.skip
+    #@pytest.mark.skip
     def test_number_of_existing_projects(self):
         login(self.config_reader, self.pages)
         number_of_displayed_projects = self.pages['projects_page'].get_projects_number_in_page()
@@ -67,7 +67,7 @@ class TestWorkspaces(BaseTest):
     @allure.description("Selecting and adding a project to workspace")
     @allure.title("Add project to workspace test")
     @pytest.mark.run(order=5)
-    @pytest.mark.skip
+    #@pytest.mark.skip
     def test_add_project_to_workspace(self):
         login(self.config_reader, self.pages)
         before = self.pages['projects_page'].get_projects_number_in_page()
@@ -83,7 +83,7 @@ class TestWorkspaces(BaseTest):
 
     @allure.description("Search for an existing project")
     @allure.title("Search for existing project test")
-    @pytest.mark.skip
+    #@pytest.mark.skip
     @pytest.mark.run(order=6)
     def test_search_project(self):
         login(self.config_reader, self.pages)
@@ -95,7 +95,7 @@ class TestWorkspaces(BaseTest):
     @allure.description("Search for a non existing project")
     @allure.title("Search for non existing project")
     @pytest.mark.run(order=7)
-    @pytest.mark.skip
+    #@pytest.mark.skip
     def test_search_for_non_existing_project(self):
         login(self.config_reader, self.pages)
         self.pages['projects_page'].search_project(
@@ -106,7 +106,7 @@ class TestWorkspaces(BaseTest):
     @allure.description("Cancel project deletion")
     @allure.title("Cancel a project deletion")
     @pytest.mark.run(order=8)
-    @pytest.mark.skip
+    #@pytest.mark.skip
     def test_cancel_project_deletion(self):
         login(self.config_reader, self.pages)
         before = self.pages['projects_page'].get_projects_number_in_page()
@@ -118,7 +118,7 @@ class TestWorkspaces(BaseTest):
     @allure.description("Deleting an existing project from workspace")
     @allure.title("Delete existing project")
     @pytest.mark.run(order=9)
-    @pytest.mark.skip
+    #@pytest.mark.skip
     def test_delete_project(self):
         login(self.config_reader, self.pages)
         before = self.pages['projects_page'].get_projects_number_in_page()
